@@ -1,0 +1,44 @@
+.cards-container {
+  display: flex;
+  flex-wrap: wrap; /* Permet aux cartes de passer à la ligne sur des écrans plus petits */
+  justify-content: center; /* Centre les cartes horizontalement */
+  gap: 40px; /* Espacement entre les cartes */
+  margin-top: 20px; /* Espacement au-dessus du conteneur de cartes */
+}
+.card {
+  position: relative;
+  padding: 20px;
+  margin: 20px; /* Ajuste pour permettre un espacement uniforme autour des cartes */
+  width: 350px; /* Largeur fixe pour chaque carte */
+  height: 450px; /* Hauteur fixe pour chaque carte */
+  background-color: #1f5677;
+  box-shadow: 0 0 15px rgba(252, 229, 103, 0.75);
+  clip-path: polygon(0, 100% 0, 100% 100%, 0 100%);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column; /* Organise les éléments de la carte en colonne */
+  align-items: center; /* Centre les éléments horizontalement dans la carte */
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 20px;
+  border: 5px double #fe774d; /* Bordure dorée */
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    0 100%
+  ); /* Réplication de la forme pentagonale */
+}
+
+img {
+  width: 60px;
+  margin-left: 40%;
+}
